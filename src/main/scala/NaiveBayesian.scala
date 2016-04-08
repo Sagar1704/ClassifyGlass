@@ -4,6 +4,8 @@ import org.apache.spark.SparkConf
 import org.apache.spark.SparkContext
 import org.apache.spark.mllib.util.MLUtils
 import org.apache.spark.mllib.classification.NaiveBayes
+import org.apache.spark.mllib.linalg.Vectors
+import org.apache.spark.mllib.regression.LabeledPoint
 
 object NaiveBayesian {
   def main(args: Array[String]): Unit = {
@@ -12,11 +14,12 @@ object NaiveBayesian {
 
         val input = sc.textFile(args(0))
         //val input = sc.textFile("S:\\Spring2016\\BigData\\Homeworks\\Homework3\\dataset\\glass.data")
-        input.map(line => line.split(",").tail.reverse.mkString(",")).saveAsTextFile(".\\intermediate")
-
-        val data = MLUtils.loadLabeledPoints(sc, ".\\intermediate")
-        //        val data = MLUtils.loadLabeledPoints(sc, "S:\\Spring2016\\BigData\\Homeworks\\Homework3\\dataset\\glass.data")
-            
+        
+        val data = input.map { line =>
+            val parts = line.split(',')
+            LabeledPoint(parts(10).toDouble, Vectors.dense(parts.drop(1).reverse.drop(1).map(_.toDouble)))
+        }
+        
         val splits = data.randomSplit(Array(0.6, 0.4), seed = 11L)
         val (trainingData, testingData) = (splits(0), splits(1))
         
