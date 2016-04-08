@@ -5,7 +5,7 @@ import org.apache.spark.SparkContext
 import org.apache.spark.mllib.tree.DecisionTree
 import org.apache.spark.mllib.util.MLUtils
 
-object DecisionTreeClassify {
+object DecisionTrees {
     def main(args: Array[String]): Unit = {
         val conf = new SparkConf().setAppName("glassClassify")
         val sc = new SparkContext(conf)
