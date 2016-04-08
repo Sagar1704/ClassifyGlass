@@ -1,0 +1,27 @@
+[0m[[0minfo[0m] [0mPackaging C:\Users\deshp\bigdata\ClassifyGlass\target\scala-2.10\classifyglass_2.10-1.0.jar ...[0m
+[0m[[0mdebug[0m] [0mInput file mappings:[0m
+[0m[[0mdebug[0m] [0m	main\scala\NaiveBayesian$$anonfun$1.class[0m
+[0m[[0mdebug[0m] [0m	  C:\Users\deshp\bigdata\ClassifyGlass\target\scala-2.10\classes\main\scala\NaiveBayesian$$anonfun$1.class[0m
+[0m[[0mdebug[0m] [0m	main[0m
+[0m[[0mdebug[0m] [0m	  C:\Users\deshp\bigdata\ClassifyGlass\target\scala-2.10\classes\main[0m
+[0m[[0mdebug[0m] [0m	main\scala\DecisionTreeClassify$$anonfun$2.class[0m
+[0m[[0mdebug[0m] [0m	  C:\Users\deshp\bigdata\ClassifyGlass\target\scala-2.10\classes\main\scala\DecisionTreeClassify$$anonfun$2.class[0m
+[0m[[0mdebug[0m] [0m	main\scala\DecisionTreeClassify.class[0m
+[0m[[0mdebug[0m] [0m	  C:\Users\deshp\bigdata\ClassifyGlass\target\scala-2.10\classes\main\scala\DecisionTreeClassify.class[0m
+[0m[[0mdebug[0m] [0m	main\scala\DecisionTreeClassify$.class[0m
+[0m[[0mdebug[0m] [0m	  C:\Users\deshp\bigdata\ClassifyGlass\target\scala-2.10\classes\main\scala\DecisionTreeClassify$.class[0m
+[0m[[0mdebug[0m] [0m	main\scala\NaiveBayesian.class[0m
+[0m[[0mdebug[0m] [0m	  C:\Users\deshp\bigdata\ClassifyGlass\target\scala-2.10\classes\main\scala\NaiveBayesian.class[0m
+[0m[[0mdebug[0m] [0m	main\scala[0m
+[0m[[0mdebug[0m] [0m	  C:\Users\deshp\bigdata\ClassifyGlass\target\scala-2.10\classes\main\scala[0m
+[0m[[0mdebug[0m] [0m	main\scala\NaiveBayesian$$anonfun$main$1.class[0m
+[0m[[0mdebug[0m] [0m	  C:\Users\deshp\bigdata\ClassifyGlass\target\scala-2.10\classes\main\scala\NaiveBayesian$$anonfun$main$1.class[0m
+[0m[[0mdebug[0m] [0m	main\scala\NaiveBayesian$$anonfun$2.class[0m
+[0m[[0mdebug[0m] [0m	  C:\Users\deshp\bigdata\ClassifyGlass\target\scala-2.10\classes\main\scala\NaiveBayesian$$anonfun$2.class[0m
+[0m[[0mdebug[0m] [0m	main\scala\NaiveBayesian$.class[0m
+[0m[[0mdebug[0m] [0m	  C:\Users\deshp\bigdata\ClassifyGlass\target\scala-2.10\classes\main\scala\NaiveBayesian$.class[0m
+[0m[[0mdebug[0m] [0m	main\scala\DecisionTreeClassify$$anonfun$1.class[0m
+[0m[[0mdebug[0m] [0m	  C:\Users\deshp\bigdata\ClassifyGlass\target\scala-2.10\classes\main\scala\DecisionTreeClassify$$anonfun$1.class[0m
+[0m[[0mdebug[0m] [0m	main\scala\DecisionTreeClassify$$anonfun$main$1.class[0m
+[0m[[0mdebug[0m] [0m	  C:\Users\deshp\bigdata\ClassifyGlass\target\scala-2.10\classes\main\scala\DecisionTreeClassify$$anonfun$main$1.class[0m
+[0m[[0minfo[0m] [0mDone packaging.[0m
