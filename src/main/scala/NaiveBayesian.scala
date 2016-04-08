@@ -24,8 +24,9 @@ object NaiveBayesian {
         val (trainingData, testingData) = (splits(0), splits(1))
         
         val lambda = 1.0
+        val modelType = "multinomial"
         
-        val model = NaiveBayes.train(data, lambda)
+        val model = NaiveBayes.train(trainingData, lambda, modelType)
         
         val labelPredictions = testingData.map { point =>
             val prediction = model.predict(point.features)
