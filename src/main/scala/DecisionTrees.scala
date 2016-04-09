@@ -12,33 +12,37 @@ object DecisionTrees {
         val conf = new SparkConf().setAppName("glassClassify")
         val sc = new SparkContext(conf)
 
-        val input = sc.textFile(args(0))
-        //val input = sc.textFile("S:\\Spring2016\\BigData\\Homeworks\\Homework3\\dataset\\glass.data")
+        if (args.length != 1) {
+            println("Usage: [glass.data]")
+        } else {
+            val input = sc.textFile(args(0))
+            //val input = sc.textFile("S:\\Spring2016\\BigData\\Homeworks\\Homework3\\dataset\\glass.data")
 
-        val data = input.map { line =>
-            val parts = line.split(',')
-            LabeledPoint(parts(10).toDouble, Vectors.dense(parts.drop(1).reverse.drop(1).map(_.toDouble)))
+            val data = input.map { line =>
+                val parts = line.split(',')
+                LabeledPoint(parts(10).toDouble, Vectors.dense(parts.drop(1).reverse.drop(1).map(_.toDouble)))
+            }
+
+            val splits = data.randomSplit(Array(0.6, 0.4))
+            val (trainingData, testingData) = (splits(0), splits(1))
+
+            val numClasses = 8
+            val categoricalFeaturesInfo = Map[Int, Int]()
+            val impurity = "gini"
+            val maxDepth = 5
+            val maxBins = 32
+
+            val model = DecisionTree.trainClassifier(trainingData, numClasses, categoricalFeaturesInfo,
+                impurity, maxDepth, maxBins)
+
+            val labelPredictions = testingData.map { point =>
+                val prediction = model.predict(point.features)
+                (point.label, prediction)
+            }
+
+            val accuracy = labelPredictions.filter(data => (data._1 == data._2)).count().toDouble / testingData.count()
+
+            println("Decision Tree accuracy:: " + accuracy)
         }
-
-        val splits = data.randomSplit(Array(0.6, 0.4))
-        val (trainingData, testingData) = (splits(0), splits(1))
-
-        val numClasses = 8
-        val categoricalFeaturesInfo = Map[Int, Int]()
-        val impurity = "gini"
-        val maxDepth = 5
-        val maxBins = 32
-
-        val model = DecisionTree.trainClassifier(trainingData, numClasses, categoricalFeaturesInfo,
-            impurity, maxDepth, maxBins)
-
-        val labelPredictions = testingData.map { point =>
-            val prediction = model.predict(point.features)
-            (point.label, prediction)
-        }
-
-        val accuracy = labelPredictions.filter(data => (data._1 == data._2)).count().toDouble / testingData.count()
-
-        println("Decision Tree accuracy:: " + accuracy)
     }
 }
